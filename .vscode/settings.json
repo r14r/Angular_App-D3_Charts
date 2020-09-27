@@ -1,0 +1,13 @@
+{
+  "editor.formatOnSave": true,
+  "files.exclude": {
+    "package-lock.json": true,
+    "node_modules": true,
+    "src/environments": true,
+    "src/favicon.ico": true,
+    "src/polyfills.ts": true,
+    "src/main.ts": true,
+    "karma.conf.js": true,
+    "tsconfig.spec.json": true
+  }
+}

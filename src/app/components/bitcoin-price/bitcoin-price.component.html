@@ -1,0 +1,10 @@
+<app-custom-date-selector [availableTimeRanges]="availableTimeRanges"
+                          (selectionChangeEvent)="selectionChanged($event)"
+                          [isLoading]="isLoading">
+</app-custom-date-selector>
+
+<app-line-chart [line1VisibleData]="bitcoinPricesData" [loading]="isLoading"
+                [xAxisLabel]='xLabel' [yAxisLabel]="yLabel"
+                [TitleLabel]="titleLabel" [xAxisDataType]="dateDataType"></app-line-chart>
+
+

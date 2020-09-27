@@ -1,0 +1,25 @@
+
+<div #chart id="chart" (window:resize)="onResize()"></div>
+<form [formGroup]="chartInputsForm" *ngIf="!loading">
+  <div class="thresholdContainer">
+    <mat-button-toggle-group [value]='selectedThresholdType' (change)="onThresholdTypeButtonsChanged($event)">
+      <mat-button-toggle value="{{selectedThresholdTypeEnum.Static}}">
+        {{staticThresholdText}}
+      </mat-button-toggle>
+      <mat-button-toggle value="{{selectedThresholdTypeEnum.Dynamic}}">
+        {{dynamicThresholdText}}
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+    <mat-form-field class="thresholdInput" *ngIf="selectedThresholdType === selectedThresholdTypeEnum.Static">
+      <input (focusout)="onThresholdFocusOut()" matInput type="number" formControlName="threshold" min="0" placeholder="Threshold" name="threshold value">
+      <mat-error *ngIf="chartInputsForm.controls['threshold'].hasError('min')">
+        Minimum number is 0.
+      </mat-error>
+      <mat-error *ngIf="chartInputsForm.controls['threshold'].hasError('max')">
+        Maximum number is {{calculateYMax(line1VisibleData, line2VisibleData)}}.
+      </mat-error>
+    </mat-form-field>
+  </div>
+</form>
+
+<img src="https://loading.io/spinners/balls/index.circle-slack-loading-icon.gif" *ngIf="loading" class="loadingImage">

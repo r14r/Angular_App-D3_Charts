@@ -1,0 +1,9 @@
+<app-custom-date-selector [availableTimeRanges]="availableTimeRanges"
+                          [isLoading]="isLoading"
+                          (selectionChangeEvent)="selectionChanged($event)">
+</app-custom-date-selector>
+
+<app-line-chart [line1VisibleData]="stockClosePricesData" [loading]="isLoading"
+                [xAxisLabel]='xLabel' [yAxisLabel]="yLabel"
+                [TitleLabel]="titleLabel"
+                [xAxisDataType]="dateDataType"></app-line-chart>

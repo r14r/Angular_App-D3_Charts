@@ -1,0 +1,9 @@
+<app-custom-date-selector [availableTimeRanges]="availableTimeRanges" [isLoading]="isLoading"> </app-custom-date-selector>
+
+<app-line-chart [line1VisibleData]="weatherTemperatureData"
+                [line2VisibleData]="weatherMaxTemperatureData"
+                [loading]="isLoading"
+                [xAxisLabel]='xLabel' [yAxisLabel]="yLabel"
+                [TitleLabel]="titleLabel"
+                [xAxisDataType]="dateDataType"></app-line-chart>
+

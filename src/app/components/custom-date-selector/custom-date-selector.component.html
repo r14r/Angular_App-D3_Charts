@@ -1,0 +1,8 @@
+<mat-form-field>
+  <mat-select [disabled]="isLoading" (selectionChange)="selectionChanged()" [(value)]="selected">
+    <mat-option *ngFor="let timeRange of availableTimeRanges; let i = index;"
+                [value]="i">
+      {{timeRange}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

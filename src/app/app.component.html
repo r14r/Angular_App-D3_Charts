@@ -1,0 +1,21 @@
+<mat-toolbar color="primary">{{chartsProjectTitle}}</mat-toolbar>
+<div class="chartContainer">
+  <mat-tab-group [backgroundColor]="'primary'" [dynamicHeight]='true' animationDuration="0ms">
+    <mat-tab [label]="stockPricesTab">
+      <ng-template matTabContent>
+        <app-stock-price></app-stock-price>
+      </ng-template>
+    </mat-tab>
+    <mat-tab [label]="bitcoinPricesTab">
+
+      <ng-template matTabContent>
+        <app-bitcoin-price></app-bitcoin-price>
+      </ng-template>
+    </mat-tab>
+    <mat-tab [label]="weatherForecastTab">
+      <ng-template matTabContent>
+        <app-weather-temperature></app-weather-temperature>
+      </ng-template>
+    </mat-tab>
+  </mat-tab-group>
+</div>
